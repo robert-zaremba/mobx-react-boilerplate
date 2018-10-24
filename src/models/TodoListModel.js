@@ -1,17 +1,16 @@
-import { observable, computed, action } from "mobx";
-
-import TodoModel from "./TodoModel";
+import { action, computed, observable } from 'mobx'
+import TodoModel from './TodoModel'
 
 export default class TodoListModel {
-  @observable todos = [];
+  @observable todos = []
 
   @computed
-  get unfinishedTodoCount() {
-    return this.todos.filter(todo => !todo.finished).length;
+  get unfinishedTodoCount () {
+    return this.todos.filter(todo => !todo.finished).length
   }
 
   @action
-  addTodo(title) {
-    this.todos.push(new TodoModel(title));
+  addTodo (title) {
+    this.todos.push(new TodoModel(title))
   }
 }
