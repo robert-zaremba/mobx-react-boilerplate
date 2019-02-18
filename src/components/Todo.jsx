@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react';
-import React, { Component } from 'react';
+import React from 'react';
 
 function toggleTodo (todo) {
   todo.finished = !todo.finished
@@ -11,7 +11,7 @@ const Todo = observer(({ todo }) => (
     <input
       type='checkbox'
       checked={todo.finished}
-      onClick={toggleTodo.bind({}, todo)}
+      onChange={toggleTodo.bind({}, todo)}
     />
     {todo.content.title}
   </li>
